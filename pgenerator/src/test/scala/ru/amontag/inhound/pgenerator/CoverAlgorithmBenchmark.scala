@@ -1,25 +1,25 @@
 package ru.amontag.inhound.pgenerator
 
-import java.io.{PrintWriter, BufferedOutputStream, FileOutputStream}
+import java.io.{FileOutputStream, PrintWriter}
 
 import org.scalatest.FunSuite
-import ru.amontag.inhound.pgenerator.CoverAlgorithm.{CoverResult, Element}
 import resource._
+import ru.amontag.inhound.pgenerator.CoverAlgorithm.{CoverResult, Element}
+
 import scala.util.Random
 
 /**
  * Created by montag on 16.03.15.
  */
 class CoverAlgorithmBenchmark extends FunSuite {
-    test("Test raise classes and sentences from 10 to 100000") {
+    test("Test raise classes and sentences from 10 to 10000") {
         managed(new FileOutputStream("CoverAlgorithmBenchmark.tsv"))
-          .flatMap(stream => managed(new BufferedOutputStream(stream)))
           .flatMap(stream => managed(new PrintWriter(stream)))
           .foreach(writer => {
             writer.println("Count of classes\tCount of sentences\tMeasures")
             val functor = CoverAlgorithm.functor(0.5, 0.5)(_)
 
-            for (classCount <- 10 to(100000, 100); sentenceCount <- 10 to(100000, 100)) {
+            for (classCount <- 10 to(1000, 100); sentenceCount <- 10 to(10000, 500)) {
                 println("Classes: " + classCount + "\tSentences: " + sentenceCount)
                 Random.setSeed(0)
                 val classes = (for (i <- 1 to classCount) yield {
@@ -37,6 +37,7 @@ class CoverAlgorithmBenchmark extends FunSuite {
                     classCount.toString,
                     sentenceCount.toString,
                     durations))
+                writer.flush()
             }
         })
     }

@@ -16,7 +16,7 @@ abstract class Pattern(val elements: Seq[ElementClass]) {
 }
 
 class RegexpPattern(elements: Seq[ElementClass]) extends Pattern(elements) {
-    val regexp = elements.map(RegexpClassSet.classes).mkString("").r
+    val regexp = elements.map(RegexpClassSet.stringRepresentationOfClasses).mkString("").r
 
     override def findMatchAll(line: String): List[String] = regexp.findAllIn(line).toList
 
@@ -31,7 +31,7 @@ class RegexpPattern(elements: Seq[ElementClass]) extends Pattern(elements) {
         elements match {
             case Nil => answer
             case head :: tail =>
-                val pattern: String = RegexpClassSet.classes(head)
+                val pattern: String = RegexpClassSet.stringRepresentationOfClasses(head)
                 val newAnswer = answer.lastOption match {
                     case None => pattern
                     case Some('+') if answer.substring(0, answer.length - 1).endsWith(pattern) => answer
