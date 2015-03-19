@@ -6,9 +6,9 @@ package ru.amontag.inhound.pgenerator
 case class ElementClass(id: Int)
 
 abstract class UniverseClassSet {
-    def defineClass(token: String): Option[ElementClass]
+    def defineClass(token: String): Set[ElementClass]
 
-    val defaultClass: (ElementClass, String)
+    def defaultClass: (ElementClass, String)
 }
 
 
