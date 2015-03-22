@@ -1,5 +1,7 @@
 package ru.amontag.inhound.pgenerator
 
+import ru.amontag.inhound.pgenerator.model.{RegexpClassSet, ElementClass}
+
 import scala.annotation.tailrec
 
 /**

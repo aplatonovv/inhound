@@ -1,4 +1,4 @@
-package ru.amontag.inhound.pgenerator
+package ru.amontag.inhound.pgenerator.model
 
 /**
  * Created by montag on 12.03.15.

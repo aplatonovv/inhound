@@ -1,4 +1,4 @@
-package ru.amontag.inhound.pgenerator
+package ru.amontag.inhound.pgenerator.markup
 
 import java.util.regex.Pattern
 

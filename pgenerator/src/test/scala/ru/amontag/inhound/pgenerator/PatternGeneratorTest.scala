@@ -1,6 +1,7 @@
 package ru.amontag.inhound.pgenerator
 
 import org.scalatest.FunSuite
+import ru.amontag.inhound.pgenerator.markup.MarkupTool
 
 /**
  * Created by montag on 19.03.15.

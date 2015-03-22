@@ -1,6 +1,7 @@
 package ru.amontag.inhound.pgenerator
 
 import org.scalatest.FunSuite
+import ru.amontag.inhound.pgenerator.model.ElementClass
 
 /**
  * Created by montag on 12.03.15.

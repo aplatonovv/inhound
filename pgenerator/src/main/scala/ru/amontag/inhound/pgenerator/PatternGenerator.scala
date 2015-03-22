@@ -1,5 +1,7 @@
 package ru.amontag.inhound.pgenerator
 
+import ru.amontag.inhound.pgenerator.markup.MarkupTool
+
 /**
  * Created by montag on 17.03.15.
  */

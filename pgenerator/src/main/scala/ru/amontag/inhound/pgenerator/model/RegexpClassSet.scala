@@ -1,4 +1,6 @@
-package ru.amontag.inhound.pgenerator
+package ru.amontag.inhound.pgenerator.model
+
+import ru.amontag.inhound.pgenerator.Tokenizer
 
 import scala.util.matching.Regex
 

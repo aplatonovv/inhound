@@ -1,6 +1,7 @@
 package ru.amontag.inhound.pgenerator
 
 import org.scalatest.FunSuite
+import ru.amontag.inhound.pgenerator.model.RegexpClassSet
 
 /**
  * Created by montag on 18.03.15.
